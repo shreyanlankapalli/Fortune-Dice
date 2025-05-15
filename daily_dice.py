@@ -1,5 +1,6 @@
 import tkinter as tk
 import random
+import threading
 import pygame
 import time
 
@@ -98,6 +99,11 @@ class DailyDiceApp:
     def run(self):
         self.root.mainloop()
 
+try:
+    from playsound import playsound
+    SOUND_ENABLED = True
+except ImportError:
+    SOUND_ENABLED = False
 # Run the app
 if __name__ == "__main__":
     app = DailyDiceApp()
